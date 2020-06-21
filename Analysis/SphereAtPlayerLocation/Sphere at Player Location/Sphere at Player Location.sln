@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions", "Google.XR.ARCoreExtensions.csproj", "{7faeb94b-68d8-e6ce-a9a3-f98df02b9e2e}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{ba2033a0-0237-0df9-abab-0c7db866a8cc}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions.Editor", "Google.XR.ARCoreExtensions.Editor.csproj", "{4fc1a76a-2025-6aff-2ff3-6d5dd8caede4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7faeb94b-68d8-e6ce-a9a3-f98df02b9e2e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7faeb94b-68d8-e6ce-a9a3-f98df02b9e2e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ba2033a0-0237-0df9-abab-0c7db866a8cc}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ba2033a0-0237-0df9-abab-0c7db866a8cc}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4fc1a76a-2025-6aff-2ff3-6d5dd8caede4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4fc1a76a-2025-6aff-2ff3-6d5dd8caede4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
