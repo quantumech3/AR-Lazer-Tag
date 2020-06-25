@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions", "Google.XR.ARCoreExtensions.csproj", "{4abca03b-1d5c-6b62-e4cf-1d8b8a7a3bb8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions.Editor", "Google.XR.ARCoreExtensions.Editor.csproj", "{7788cc10-26c5-ee85-cc14-d187334cb63a}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4abca03b-1d5c-6b62-e4cf-1d8b8a7a3bb8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4abca03b-1d5c-6b62-e4cf-1d8b8a7a3bb8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7788cc10-26c5-ee85-cc14-d187334cb63a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7788cc10-26c5-ee85-cc14-d187334cb63a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
