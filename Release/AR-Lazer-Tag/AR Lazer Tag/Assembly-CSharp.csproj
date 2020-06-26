@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\ARNetworkManager.cs" />
     <Compile Include="Assets\Scripts\GameState.cs" />
     <Compile Include="Assets\Scripts\HostGuiBehavior.cs" />
+    <Compile Include="Assets\Scripts\LazerBehavior.cs" />
     <Compile Include="Assets\Scripts\PlayerInfo.cs" />
     <Compile Include="Assets\Scripts\ServerInfo.cs" />
     <Reference Include="UnityEngine">
