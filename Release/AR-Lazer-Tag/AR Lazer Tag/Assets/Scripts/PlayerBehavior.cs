@@ -81,6 +81,5 @@ public class PlayerBehavior : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        CmdSpawnLazerAt(this.transform.position, this.transform.rotation);
     }
 }
