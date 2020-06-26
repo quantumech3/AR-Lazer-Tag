@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions", "Google.XR.ARCoreExtensions.csproj", "{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{FF001F21-0167-1962-6619-0629E961B14C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions", "Google.XR.ARCoreExtensions.csproj", "{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions.Editor", "Google.XR.ARCoreExtensions.Editor.csproj", "{10CC8877-C526-85EE-CC14-D187334CB63A}"
 EndProject
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FF001F21-0167-1962-6619-0629E961B14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FF001F21-0167-1962-6619-0629E961B14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF001F21-0167-1962-6619-0629E961B14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF001F21-0167-1962-6619-0629E961B14C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA0BC4A-5C1D-626B-E4CF-1D8B8A7A3BB8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{10CC8877-C526-85EE-CC14-D187334CB63A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10CC8877-C526-85EE-CC14-D187334CB63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10CC8877-C526-85EE-CC14-D187334CB63A}.Release|Any CPU.ActiveCfg = Release|Any CPU

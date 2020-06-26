@@ -7,12 +7,23 @@ using UnityEngine.Networking;
 public class LazerBehavior : NetworkBehaviour
 {
     public float speed = 0.1f;
+    private bool transformIsLocalized = false;
 
     private void Start()
     {
-        if (isClient)
+        if (isClient && GameObject.Find("Origin(Clone)") != null)
         {
             this.transform.SetParent(GameObject.Find("Origin(Clone)").transform, false);
+            transformIsLocalized = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (isClient && !transformIsLocalized && GameObject.Find("Origin(Clone)") != null)
+        {
+            this.transform.SetParent(GameObject.Find("Origin(Clone)").transform, false);
+            transformIsLocalized = true;
         }
     }
 
