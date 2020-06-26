@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &357462986593866011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 357462986593866008}
+  - component: {fileID: 357462986593866009}
+  - component: {fileID: 357462986593866010}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &357462986593866008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357462986593866011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &357462986593866009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357462986593866011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &357462986593866010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357462986593866011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988f5c64e1712f5479bf2d4b7abffc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 2
+  height: 0
+  position: {x: 0, y: 0, z: 0}
+  pregameGuiPrefab: {fileID: 0}
+  waitingGuiPrefab: {fileID: 0}
+  aliveGuiPrefab: {fileID: 0}
+  deadGuiPrefab: {fileID: 0}
+  originPrefab: {fileID: 3753827199990560509, guid: 3246bfd285c29bc40a0232a4e61ad7e7,
+    type: 3}
+  playerHitboxPrefab: {fileID: 1827416889107205555, guid: aedf37160d621824b97e0e426bdf1f17,
+    type: 3}
+  lazerPrefab: {fileID: 4643602728424512836, guid: d855ee68d1b51a543931b660a9281f14,
+    type: 3}
+  arSessionOriginPrefab: {fileID: 7435530969478169122, guid: f57054ef5670627429f77562672bae5e,
+    type: 3}
+  arSessionPrefab: {fileID: 5109629608901961348, guid: cb810cb39e859bd4bb2ce42cd33257b1,
+    type: 3}
+  arExtensionsPrefab: {fileID: 3176403927303032931, guid: 9cc1949693adefe4a96b0cf6dd2bce74,
+    type: 3}
+  networkManager: {fileID: 0}
+  serverInfo: {fileID: 0}

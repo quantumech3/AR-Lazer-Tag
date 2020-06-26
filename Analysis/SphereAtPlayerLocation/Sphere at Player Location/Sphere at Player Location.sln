@@ -1,23 +1,30 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions", "Google.XR.ARCoreExtensions.csproj", "{7faeb94b-68d8-e6ce-a9a3-f98df02b9e2e}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{A03320BA-3702-F90D-ABAB-0C7DB866A8CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{ba2033a0-0237-0df9-abab-0c7db866a8cc}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions", "Google.XR.ARCoreExtensions.csproj", "{4BB9AE7F-D868-CEE6-A9A3-F98DF02B9E2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions.Editor", "Google.XR.ARCoreExtensions.Editor.csproj", "{4fc1a76a-2025-6aff-2ff3-6d5dd8caede4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.XR.ARCoreExtensions.Editor", "Google.XR.ARCoreExtensions.Editor.csproj", "{6AA7C14F-2520-FF6A-2FF3-6D5DD8CAEDE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7faeb94b-68d8-e6ce-a9a3-f98df02b9e2e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7faeb94b-68d8-e6ce-a9a3-f98df02b9e2e}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ba2033a0-0237-0df9-abab-0c7db866a8cc}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ba2033a0-0237-0df9-abab-0c7db866a8cc}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4fc1a76a-2025-6aff-2ff3-6d5dd8caede4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4fc1a76a-2025-6aff-2ff3-6d5dd8caede4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03320BA-3702-F90D-ABAB-0C7DB866A8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03320BA-3702-F90D-ABAB-0C7DB866A8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03320BA-3702-F90D-ABAB-0C7DB866A8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03320BA-3702-F90D-ABAB-0C7DB866A8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB9AE7F-D868-CEE6-A9A3-F98DF02B9E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB9AE7F-D868-CEE6-A9A3-F98DF02B9E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB9AE7F-D868-CEE6-A9A3-F98DF02B9E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB9AE7F-D868-CEE6-A9A3-F98DF02B9E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AA7C14F-2520-FF6A-2FF3-6D5DD8CAEDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AA7C14F-2520-FF6A-2FF3-6D5DD8CAEDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AA7C14F-2520-FF6A-2FF3-6D5DD8CAEDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AA7C14F-2520-FF6A-2FF3-6D5DD8CAEDE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

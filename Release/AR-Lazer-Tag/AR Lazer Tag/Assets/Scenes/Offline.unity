@@ -2027,6 +2027,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AR Network Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5239451410544540487, guid: 0686791801e6aeb4fa1f3de392623201,
+        type: 3}
+      propertyPath: m_DontDestroyOnLoad
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5239451410544540488, guid: 0686791801e6aeb4fa1f3de392623201,
         type: 3}
       propertyPath: m_LocalPosition.x
