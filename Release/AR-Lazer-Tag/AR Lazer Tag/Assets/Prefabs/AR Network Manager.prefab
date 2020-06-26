@@ -57,7 +57,8 @@ MonoBehaviour:
   m_PlayerSpawnMethod: 0
   m_OfflineScene: Offline
   m_OnlineScene: Online
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 7434044822783044549, guid: 78a566c72f0f8234c960782e06ba62d8, type: 3}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -115,7 +116,8 @@ MonoBehaviour:
   matchMaker: {fileID: 0}
   playerInfoPrefab: {fileID: 1402830389909775861, guid: d4535f4eb9528e8449d16f22552959b4,
     type: 3}
-  hostGuiPrefab: {fileID: 0}
+  hostGuiPrefab: {fileID: 7434044822783044549, guid: 78a566c72f0f8234c960782e06ba62d8,
+    type: 3}
   addressInput: {fileID: 0}
   portInput: {fileID: 0}
   heightInput: {fileID: 0}
