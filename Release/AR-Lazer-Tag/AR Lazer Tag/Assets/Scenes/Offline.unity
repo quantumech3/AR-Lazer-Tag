@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 71031683}
   - component: {fileID: 71031682}
   - component: {fileID: 71031681}
+  - component: {fileID: 71031685}
   m_Layer: 5
   m_Name: Offline Gui
   m_TagString: Untagged
@@ -223,6 +224,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &71031685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71031680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73600b620d7fb6488547dbe1b5d55de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkManager: {fileID: 0}
 --- !u!1 &440771160
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +562,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1595714807}
+      - m_Target: {fileID: 71031685}
         m_MethodName: ServerStart
         m_Mode: 1
         m_Arguments:
@@ -1128,7 +1142,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1595714807}
+      - m_Target: {fileID: 71031685}
         m_MethodName: ClientStart
         m_Mode: 1
         m_Arguments:
@@ -1526,18 +1540,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443159115}
   m_CullTransparentMesh: 0
---- !u!114 &1595714807 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5239451410544540487, guid: 0686791801e6aeb4fa1f3de392623201,
-    type: 3}
-  m_PrefabInstance: {fileID: 5239451409487861680}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9323491270555ca4f8f946182511a024, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1630001947
 GameObject:
   m_ObjectHideFlags: 0

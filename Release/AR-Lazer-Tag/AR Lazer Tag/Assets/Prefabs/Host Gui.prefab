@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7434044822783044552}
   - component: {fileID: 7434044822783044551}
   - component: {fileID: 7434044822783044550}
+  - component: {fileID: 2032352032821032672}
   m_Layer: 5
   m_Name: Host Gui
   m_TagString: Untagged
@@ -151,6 +152,19 @@ MonoBehaviour:
   networkManager: {fileID: 0}
   serverInfo: {fileID: 0}
   gameStateDisplay: {fileID: 7434044824021354739}
+--- !u!114 &2032352032821032672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7434044822783044549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73600b620d7fb6488547dbe1b5d55de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkManager: {fileID: 0}
 --- !u!1 &7434044824021354737
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +362,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2032352032821032672}
         m_MethodName: StopServer
         m_Mode: 1
         m_Arguments:
