@@ -12,9 +12,4 @@ public class LazerBehavior : NetworkBehaviour
     {
         this.transform.position += this.transform.TransformDirection(new Vector3(0, 0, 1)).normalized * speed * Time.deltaTime;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(this.gameObject);
-    }
 }
