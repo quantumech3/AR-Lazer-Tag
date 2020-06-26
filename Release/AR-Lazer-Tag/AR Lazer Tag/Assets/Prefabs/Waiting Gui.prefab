@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   nextGui: {fileID: 4070375169575045001, guid: fadc50cecf9bf4c44b06014cd1fa03ea, type: 3}
-  transitionState: 3
+  transitionState: 4
 --- !u!1 &7077925654176342417
 GameObject:
   m_ObjectHideFlags: 0

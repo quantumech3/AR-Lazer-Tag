@@ -80,10 +80,14 @@ MonoBehaviour:
   state: 2
   height: 0
   position: {x: 0, y: 0, z: 0}
-  pregameGuiPrefab: {fileID: 0}
-  waitingGuiPrefab: {fileID: 0}
-  aliveGuiPrefab: {fileID: 0}
-  deadGuiPrefab: {fileID: 0}
+  pregameGuiPrefab: {fileID: 1651487052810957897, guid: bd8641f49158c3f4789738b824534786,
+    type: 3}
+  waitingGuiPrefab: {fileID: 7077925654147059283, guid: 56a621eace344f642b25e1827a11d16f,
+    type: 3}
+  aliveGuiPrefab: {fileID: 4070375169575045001, guid: fadc50cecf9bf4c44b06014cd1fa03ea,
+    type: 3}
+  deadGuiPrefab: {fileID: 2053340181071197955, guid: 944ec3a47950bfd4086aad819c8bdd8d,
+    type: 3}
   originPrefab: {fileID: 3753827199990560509, guid: 3246bfd285c29bc40a0232a4e61ad7e7,
     type: 3}
   playerHitboxPrefab: {fileID: 1827416889107205555, guid: aedf37160d621824b97e0e426bdf1f17,

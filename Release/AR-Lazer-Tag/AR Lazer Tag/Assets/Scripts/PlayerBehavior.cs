@@ -126,7 +126,19 @@ public class PlayerBehavior : NetworkBehaviour
                 // Instantiate AR Objects in the player's scene
                 InstantiateARObjects();
 
-                // TODO: Implement the rest of Start() starting from line 61 and on of the design
+                // Spawn an appropriate gui depending on the initial player state
+                if (this.state == GameState.Pregame)
+                {
+                    GameObject gui = Instantiate(pregameGuiPrefab);
+                    GuiTransitionHandler transitionHandler = gui.GetComponent<GuiTransitionHandler>();
+                    transitionHandler.player = this.gameObject;
+                }
+                else if(this.state == GameState.Waiting)
+                {
+                    GameObject gui = Instantiate(waitingGuiPrefab);
+                    GuiTransitionHandler transitionHandler = gui.GetComponent<GuiTransitionHandler>();
+                    transitionHandler.player = this.gameObject;
+                }
             }
         }
     }
