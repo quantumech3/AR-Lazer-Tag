@@ -232,12 +232,6 @@ public class PlayerBehavior : NetworkBehaviour
     {
         if(isClient)
         {
-            // Tell ARCore that the initial position of the player is the origin, not where the player starts the program initially
-            //GameObject sessionOrigin = GameObject.Find("AR Session Origin");
-            //sessionOrigin.transform.position = Vector3.zero;
-            //sessionOrigin.transform.rotation = Quaternion.identity;
-            //sessionOrigin.transform.SetParent(this.origin.transform, false);
-
             bool playerHasBeenHit = false;
 
             if (this.playerHitbox != null)
@@ -263,10 +257,10 @@ public class PlayerBehavior : NetworkBehaviour
                 {
                     Transform lazerTransform = this.camera.transform;
 
-                    // Translate lazerTransform out 0.65 units in the direction it is facing
-                    lazerTransform.position += lazerTransform.forward * 0.65f;
+                    // Lazer pose in origin space
+                    Pose lazerOriginTransform = origin.transform.InverseTransformPose(new Pose(lazerTransform.position + lazerTransform.forward * 0.65f, lazerTransform.rotation));
 
-                    CmdSpawnLazerAt(lazerTransform.position, lazerTransform.rotation);
+                    CmdSpawnLazerAt(lazerOriginTransform.position, lazerOriginTransform.rotation);
                 }
             }
 
