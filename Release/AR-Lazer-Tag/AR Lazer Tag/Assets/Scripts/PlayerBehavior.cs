@@ -30,7 +30,7 @@ public class PlayerBehavior : NetworkBehaviour
     public ServerInfo serverInfo;
 
     private PlayerInfo playerInfo;
-    private GameObject origin;
+    private GameObject origin = null;
     private GameObject playerHitbox;
     private GameObject camera;
     private ARRaycastManager raycastManager;
@@ -141,5 +141,146 @@ public class PlayerBehavior : NetworkBehaviour
                 }
             }
         }
+    }
+
+    void Update()
+    {
+        switch (this.state)
+        {
+            case GameState.Pregame:
+                PregameUpdate();
+                break;
+            case GameState.Waiting:
+                WaitingUpdate();
+                break;
+            case GameState.Alive:
+                AliveUpdate();
+                break;
+            case GameState.Dead:
+                DeadUpdate();
+                break;
+        }
+    }
+
+    public void PregameUpdate()
+    {
+        if(isLocalPlayer && isClient)
+        {
+            // If the user taps the screen
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            {
+                List<ARRaycastHit> hitpoints = new List<ARRaycastHit>();
+                raycastManager.Raycast(new Vector2(Screen.width / 2f, Screen.height / 2f), hitpoints);
+
+                if(hitpoints.Count > 0)
+                {
+                    CmdSetServerState(GameState.Waiting);
+
+                    // this.origin = an instantiated "originPrefab" game object located at the transform of hitpoints[0]
+                    this.origin = Instantiate(originPrefab, hitpoints[0].pose.position, hitpoints[0].pose.rotation);
+
+                    // ARCloudAnchor anchor = A cloud anchor instantiated at the transform of hitpoints[0]
+                    ARCloudAnchor anchor = anchorManager.HostCloudAnchor(anchorManager.AddAnchor(hitpoints[0].pose));
+
+                    // Set the "cloudAnchor" attribute of the "OriginBehavior" component of "origin" to "anchor"
+                    this.origin.GetComponent<OriginBehavior>().cloudAnchor = anchor;
+                }
+            }
+
+            if (serverInfo.state != GameState.Pregame)
+                CmdSetPlayerState(GameState.Waiting);
+        }
+    }
+
+    public void WaitingUpdate()
+    {
+        if(isClient)
+        {
+            if(this.origin != null)
+            {
+                OriginBehavior originBehavior = this.origin.GetComponent<OriginBehavior>();
+
+                if(originBehavior.cloudAnchor.cloudAnchorState == CloudAnchorState.Success)
+                {
+                    CmdSetOriginId(originBehavior.cloudAnchor.cloudAnchorId);
+                    CmdSetServerState(GameState.Alive);
+                    CmdSetPlayerState(GameState.Alive);
+                }
+                else if(originBehavior.cloudAnchor.cloudAnchorState != CloudAnchorState.TaskInProgress)
+                {
+                    Debug.LogError("Had trouble hosting cloud anchor: " + originBehavior.cloudAnchor.cloudAnchorState);
+                    Debug.LogError("Trying again..");
+
+                    Destroy(this.origin);
+                    this.origin = null;
+                }
+            }
+            else if(serverInfo.originId != string.Empty)
+            {
+                if(this.origin == null)
+                {
+                    this.origin = Instantiate(originPrefab);
+                    OriginBehavior originBehavior = this.origin.GetComponent<OriginBehavior>();
+
+                    originBehavior.cloudAnchor = anchorManager.ResolveCloudAnchorId(serverInfo.originId);
+                }
+            }
+        }
+    }
+
+    public void AliveUpdate()
+    {
+        if(isClient)
+        {
+            // Tell ARCore that the initial position of the player is the origin, not where the player starts the program initially
+            //GameObject sessionOrigin = GameObject.Find("AR Session Origin");
+            //sessionOrigin.transform.position = Vector3.zero;
+            //sessionOrigin.transform.rotation = Quaternion.identity;
+            //sessionOrigin.transform.SetParent(this.origin.transform, false);
+
+            bool playerHasBeenHit = false;
+
+            if (this.playerHitbox != null)
+            {
+                playerHasBeenHit = this.playerHitbox.GetComponent<PlayerHitboxBehavior>().hasBeenHit;
+                Destroy(this.playerHitbox);
+                playerHitbox = null;
+            }
+
+            if (isLocalPlayer)
+            {
+                // If this player's hitbox has been hit
+                if (playerHasBeenHit)
+                {
+                    CmdSetPlayerState(GameState.Dead);
+                    return;
+                }
+
+                // CmdSetPosition(local position of "this" relative to this.origin)
+                CmdSetPosition(this.origin.transform.InverseTransformPoint(this.camera.transform.position));
+
+                if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+                {
+                    Transform lazerTransform = this.camera.transform;
+
+                    // Translate lazerTransform out 0.65 units in the direction it is facing
+                    lazerTransform.position += lazerTransform.forward * 0.65f;
+
+                    CmdSpawnLazerAt(lazerTransform.position, lazerTransform.rotation);
+                }
+            }
+
+            // Set this.playerHitbox to an instance of playerHitboxPrefab instantiated at "position" relative to "origin"
+            this.playerHitbox = Instantiate(playerHitboxPrefab, this.position, Quaternion.identity);
+            this.playerHitbox.transform.SetParent(this.origin.transform, false);
+
+            // Scale this.playerHitbox's Y dimension by this.height/39.3701
+            this.playerHitbox.transform.localScale = new Vector3(0.45f, (float)this.height / 39.3701f, 0.45f);
+        }
+    }
+
+    public void DeadUpdate()
+    {
+
     }
 }

@@ -10,11 +10,10 @@ public class OriginBehavior : MonoBehaviour
     void Update()
     {
         // If cloudAnchor exists, then set the transform of this game object to the cloud anchors transform
-        if(cloudAnchor != null)
+        if(cloudAnchor != null && cloudAnchor.cloudAnchorState == CloudAnchorState.Success)
         {
-            this.transform.position = Vector3.zero;
-            this.transform.rotation = Quaternion.identity;
-            this.transform.parent = cloudAnchor.transform;
+            this.transform.position = cloudAnchor.pose.position;
+            this.transform.rotation = cloudAnchor.pose.rotation;
         }
     }
 }
