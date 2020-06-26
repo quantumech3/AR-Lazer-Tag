@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PlayerHitboxBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool hasBeenHit = false;
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Lazer")
+            hasBeenHit = true;
     }
 }
