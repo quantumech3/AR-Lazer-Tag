@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Google.XR.ARCoreExtensions;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -72,14 +73,61 @@ public class PlayerBehavior : NetworkBehaviour
         NetworkServer.Spawn(lazer);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void InstantiateARObjects()
     {
-        
+        // Instantiate ARSession object
+        GameObject session = Instantiate(arSessionPrefab);
+        session.name = "AR Session";
+
+        // Instantiate ARSessionOrigin object
+        GameObject sessionOrigin = Instantiate(arSessionOriginPrefab);
+        sessionOrigin.name = "AR Session Origin";
+
+        // Set references
+        this.camera = GameObject.Find("AR Camera");
+        this.raycastManager = sessionOrigin.GetComponent<ARRaycastManager>();
+        this.anchorManager = sessionOrigin.GetComponent<ARAnchorManager>();
+
+        // Instantiate ARCoreExtensions object
+        ARCoreExtensions arCoreExtensions = Instantiate(arExtensionsPrefab).GetComponent<ARCoreExtensions>();
+        arCoreExtensions.name = "ARCore Extensions";
+        arCoreExtensions.Session = session.GetComponent<ARSession>();
+        arCoreExtensions.SessionOrigin = sessionOrigin.GetComponent<ARSessionOrigin>();
+        arCoreExtensions.CameraManager = this.camera.GetComponent<ARCameraManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
+        // Set this.networkManager to the ARNetworkManager in the scene
+        this.networkManager = GameObject.Find("AR Network Manager").GetComponent<ARNetworkManager>();
+        // Set this.serverInfo to the ServerInfo component of the Server Info game object in the scene
+        this.serverInfo = GameObject.Find("Server Info").GetComponent<ServerInfo>();
+
+        if(isClient)
+        {
+            // Set the player's initial game state based off of the state of the server
+            if (serverInfo.state == GameState.Pregame)
+            {
+                CmdSetPlayerState(GameState.Pregame);
+            }
+            else
+            {
+                CmdSetPlayerState(GameState.Waiting);
+            }
+
+            if(isLocalPlayer)
+            {
+                // Set this.playerInfo to the PlayerInfo component of the Player Info game object in the scene
+                this.playerInfo = GameObject.Find("Player Info").GetComponent<PlayerInfo>();
+
+                // Set the height of this player
+                CmdSetHeight(playerInfo.height);
+
+                // Instantiate AR Objects in the player's scene
+                InstantiateARObjects();
+
+                // TODO: Implement the rest of Start() starting from line 61 and on of the design
+            }
+        }
     }
 }

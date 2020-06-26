@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\ARNetworkManager.cs" />
     <Compile Include="Assets\Scripts\ARNetworkManagerHandler.cs" />
     <Compile Include="Assets\Scripts\GameState.cs" />
+    <Compile Include="Assets\Scripts\GuiTransitionHandler.cs" />
     <Compile Include="Assets\Scripts\HostGuiBehavior.cs" />
     <Compile Include="Assets\Scripts\LazerBehavior.cs" />
     <Compile Include="Assets\Scripts\OriginBehavior.cs" />
