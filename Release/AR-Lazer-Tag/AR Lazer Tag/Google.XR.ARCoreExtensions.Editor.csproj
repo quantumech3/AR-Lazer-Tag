@@ -651,11 +651,11 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/AR Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/AR Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/AR Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/AR Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
