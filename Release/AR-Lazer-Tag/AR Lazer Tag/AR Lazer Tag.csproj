@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{49494986-E3E4-0AA5-892B-5BD33E740A68}</ProjectGuid>
+    <ProjectGuid>{972FC76D-38B7-15AF-91F8-E3060F925534}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Google.XR.ARCoreExtensions</AssemblyName>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -47,11 +47,11 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Managed/UnityEngine/UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.2f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -229,39 +229,6 @@
     </Reference>
     <Reference Include="Managed/UnityEditor">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.2f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.VR">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Graphs">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WebGL.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Android.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
-      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.122.0">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.122.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.122.0">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/PlayServicesResolver/Editor/Google.JarResolver_v1.2.122.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.122.0">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.122.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Protobuf">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/Scripts/Internal/Analytics/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.2f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -610,48 +577,119 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.XR.ARFoundation.csproj">
-      <Project>{0656CD89-E0E3-4D9F-DB04-49687BAD1C32}</Project>
-      <Name>Unity.XR.ARFoundation</Name>
+    <ProjectReference Include="Unity.XR.Management.csproj">
+      <Project>{61EF8CBA-9111-4BC4-D310-70E79B91C531}</Project>
+      <Name>Unity.XR.Management</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{7C87BE25-0A2E-FC58-1E14-37330F289AA3}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Subsystem.Registration.csproj">
+      <Project>{23965A9C-513A-63AA-8865-1A71BA61BCA2}</Project>
+      <Name>Unity.Subsystem.Registration</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.multiplayer-hlapi.Editor.csproj">
+      <Project>{5FCD587C-B023-5664-12C3-B6D9F281A654}</Project>
+      <Name>com.unity.multiplayer-hlapi.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{F37EB8D3-595B-2A8E-9D57-98253E4F534B}</Project>
+      <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.XR.ARSubsystems.csproj">
       <Project>{5C4B56E0-C4A7-2098-2B16-041850FBE6CB}</Project>
       <Name>Unity.XR.ARSubsystems</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.XR.ARSubsystems.Editor.csproj">
+      <Project>{BAAEB68A-6CEE-5794-7F4F-40273E161236}</Project>
+      <Name>Unity.XR.ARSubsystems.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.XR.ARCore.csproj">
       <Project>{ED5A4B89-D54F-2EB2-5FDB-5EFDFD72CDD2}</Project>
       <Name>Unity.XR.ARCore</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.XR.ARFoundation.Editor.csproj">
+      <Project>{CDFA004F-269F-983D-DDCE-81EC1EF60C67}</Project>
+      <Name>Unity.XR.ARFoundation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{3A848AB7-9891-EDDA-D555-BF184C2F81F4}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.ARFoundation.csproj">
+      <Project>{0656CD89-E0E3-4D9F-DB04-49687BAD1C32}</Project>
+      <Name>Unity.XR.ARFoundation</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.ARCore.Editor.csproj">
+      <Project>{301999FB-2218-B418-9183-3FFAC6E56807}</Project>
+      <Name>Unity.XR.ARCore.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{6940CB9D-2F64-7CD4-BA0F-5610D5AB47B0}</Project>
+      <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.XR.ARCoreExtensions.csproj">
+      <Project>{49494986-E3E4-0AA5-892B-5BD33E740A68}</Project>
+      <Name>Google.XR.ARCoreExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
+      <Project>{C12CEEC6-100C-58A2-DE36-314E4DE5E40B}</Project>
+      <Name>Unity.CollabProxy.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.XR.ARCoreExtensions.Editor.csproj">
+      <Project>{54246873-F9D6-DC35-327F-117D18DE417F}</Project>
+      <Name>Google.XR.ARCoreExtensions.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.multiplayer-weaver.Editor.csproj">
+      <Project>{93D0DB2F-F53D-5A17-ACE7-5C0226DA2A0D}</Project>
+      <Name>com.unity.multiplayer-weaver.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.csproj">
+      <Project>{8E7C73A3-7719-6FE2-0D0D-A83EDAB504C7}</Project>
+      <Name>UnityEngine.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Management.Editor.csproj">
+      <Project>{1DEBA887-0FDC-75F1-A28F-2738391F56E7}</Project>
+      <Name>Unity.XR.Management.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{C540080A-BED7-978E-DDFC-EE09E5DBB722}</Project>
+      <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.SpatialTracking.csproj">
+      <Project>{779568FA-8B74-9FC0-8E1A-6EBB501CEFE6}</Project>
+      <Name>UnityEditor.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
+      <Project>{EDE48CFA-E9C6-66CB-F43E-070EAA2E76B0}</Project>
+      <Name>UnityEngine.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{07A21C90-D344-AE1A-8456-9910C203B41A}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
+      <Project>{E39D021A-24A3-CC45-6B3B-9304A0479D9A}</Project>
+      <Name>UnityEditor.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.multiplayer-hlapi.Runtime.csproj">
+      <Project>{FA5CA632-7858-B348-2678-3563F1DAD317}</Project>
+      <Name>com.unity.multiplayer-hlapi.Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARAnchorManagerExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCloudAnchor.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCloudReferencePoint.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCoreExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCoreExtensionsConfig.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CameraConfigDepthSensorUsages.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CloudAnchorState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CloudReferenceState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARAnchorExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARPlaneExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARSessionExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\XRCameraFrameExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ApiConstants.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Helpers\DllImportNoop.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Helpers\Translators.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\IOSSupportManager.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\RuntimeConfig.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiArStatus.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiCloudAnchorMode.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiCloudAnchorState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiPose.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiTrackingState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\AnchorApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\CameraConfigApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\PoseApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\SessionApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\VersionInfo.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\XRCameraConfigurationExtensions.cs" />
+    <Compile Include="Assets\Scripts\ARNetworkManager.cs" />
+    <Compile Include="Assets\Scripts\ARNetworkManagerHandler.cs" />
+    <Compile Include="Assets\Scripts\GameState.cs" />
+    <Compile Include="Assets\Scripts\GuiTransitionHandler.cs" />
+    <Compile Include="Assets\Scripts\HostGuiBehavior.cs" />
+    <Compile Include="Assets\Scripts\LazerBehavior.cs" />
+    <Compile Include="Assets\Scripts\OriginBehavior.cs" />
+    <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
+    <Compile Include="Assets\Scripts\PlayerHitboxBehavior.cs" />
+    <Compile Include="Assets\Scripts\PlayerInfo.cs" />
+    <Compile Include="Assets\Scripts\ServerInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\BuildResources\ARCoreiOSDependencies.template" />

@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{49494986-E3E4-0AA5-892B-5BD33E740A68}</ProjectGuid>
+    <ProjectGuid>{5C4B56E0-C4A7-2098-2B16-041850FBE6CB}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Google.XR.ARCoreExtensions</AssemblyName>
+    <AssemblyName>Unity.XR.ARSubsystems</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -610,48 +610,100 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.XR.ARFoundation.csproj">
-      <Project>{0656CD89-E0E3-4D9F-DB04-49687BAD1C32}</Project>
-      <Name>Unity.XR.ARFoundation</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.ARSubsystems.csproj">
-      <Project>{5C4B56E0-C4A7-2098-2B16-041850FBE6CB}</Project>
-      <Name>Unity.XR.ARSubsystems</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.ARCore.csproj">
-      <Project>{ED5A4B89-D54F-2EB2-5FDB-5EFDFD72CDD2}</Project>
-      <Name>Unity.XR.ARCore</Name>
+    <ProjectReference Include="Unity.Subsystem.Registration.csproj">
+      <Project>{23965A9C-513A-63AA-8865-1A71BA61BCA2}</Project>
+      <Name>Unity.Subsystem.Registration</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARAnchorManagerExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCloudAnchor.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCloudReferencePoint.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCoreExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCoreExtensionsConfig.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CameraConfigDepthSensorUsages.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CloudAnchorState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CloudReferenceState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARAnchorExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARPlaneExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARSessionExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\XRCameraFrameExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ApiConstants.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Helpers\DllImportNoop.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Helpers\Translators.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\IOSSupportManager.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\RuntimeConfig.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiArStatus.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiCloudAnchorMode.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiCloudAnchorState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiPose.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiTrackingState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\AnchorApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\CameraConfigApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\PoseApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\SessionApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\VersionInfo.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\XRCameraConfigurationExtensions.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\AnchorSubsystem\XRAnchor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\AnchorSubsystem\XRAnchorSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\AnchorSubsystem\XRAnchorSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\AnchorSubsystem\XRReferencePoint.deprecated.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\AnchorSubsystem\XRReferencePointSubsystem.deprecated.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\AnchorSubsystem\XRReferencePointSubsystemDescriptor.deprecated.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\AssemblyInfo.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\AsyncCameraImageConversionStatus.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\CameraFocusMode.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\CameraImageFormat.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\CameraImageTransformation.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\LightEstimationMode.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRAsyncCameraImageConversion.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraConfiguration.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraFrame.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraImage.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraImageConversionParams.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraImagePlane.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraIntrinsics.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraParams.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\CameraSubsystem\XRCameraSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\DepthSubsystem\XRDepthSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\DepthSubsystem\XRDepthSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\DepthSubsystem\XRPointCloud.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\DepthSubsystem\XRPointCloudData.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\EnvironmentProbeSubsystem\XREnvironmentProbe.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\EnvironmentProbeSubsystem\XREnvironmentProbeSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\EnvironmentProbeSubsystem\XREnvironmentProbeSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\FaceSubsystem\XRFace.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\FaceSubsystem\XRFaceMesh.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\FaceSubsystem\XRFaceSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\FaceSubsystem\XRFaceSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\GuidUtil.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\HumanBodySubsystem\XRHumanBody.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\HumanBodySubsystem\XRHumanBodyJoint.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\HumanBodySubsystem\XRHumanBodyPose2DJoint.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\HumanBodySubsystem\XRHumanBodySubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\HumanBodySubsystem\XRHumanBodySubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ImageTrackingSubsystem\IReferenceImageLibrary.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ImageTrackingSubsystem\MutableRuntimeReferenceImageLibrary.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ImageTrackingSubsystem\RuntimeReferenceImageLibrary.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ImageTrackingSubsystem\XRImageTrackingSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ImageTrackingSubsystem\XRImageTrackingSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ImageTrackingSubsystem\XRReferenceImage.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ImageTrackingSubsystem\XRReferenceImageLibrary.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ImageTrackingSubsystem\XRTrackedImage.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\InputSubsystem\HandheldARInputDevice.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\NativeCopyUtility.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\NotTrackingReason.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ObjectTrackingSubsystem\XRObjectTrackingSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ObjectTrackingSubsystem\XRObjectTrackingSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ObjectTrackingSubsystem\XRReferenceObject.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ObjectTrackingSubsystem\XRReferenceObjectEntry.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ObjectTrackingSubsystem\XRReferenceObjectLibrary.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ObjectTrackingSubsystem\XRTrackedObject.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\OcclusionSubsystem\SegmentationDepthMode.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\OcclusionSubsystem\SegmentationStencilMode.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\OcclusionSubsystem\XROcclusionSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\OcclusionSubsystem\XROcclusionSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ParticipantSubsystem\XRParticipant.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ParticipantSubsystem\XRParticipantSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\ParticipantSubsystem\XRParticipantSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\PlaneTracking\BoundedPlane.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\PlaneTracking\PlaneAlignment.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\PlaneTracking\PlaneClassification.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\PlaneTracking\PlaneDetectionMode.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\PlaneTracking\XRPlaneSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\PlaneTracking\XRPlaneSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\Promise.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\RaycastSubsystem\TrackableType.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\RaycastSubsystem\XRRaycastHit.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\RaycastSubsystem\XRRaycastSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\RaycastSubsystem\XRRaycastSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\SerializableGuid.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\SessionSubsystem\SessionAvailability.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\SessionSubsystem\SessionInstallationStatus.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\SessionSubsystem\XRSessionSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\SessionSubsystem\XRSessionSubsystemDescriptor.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\SessionSubsystem\XRSessionUpdateParams.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\TrackableId.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\TrackingState.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\TrackingSubsystem\ITrackable.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\TrackingSubsystem\TrackableChanges.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\TrackingSubsystem\TrackingSubsystem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\TrackingSubsystem\ValidationUtility.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\XRSubsytstem.cs" />
+    <Compile Include="Packages\com.unity.xr.arsubsystems\Runtime\XRTextureDescriptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\BuildResources\ARCoreiOSDependencies.template" />

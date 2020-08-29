@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{54246873-F9D6-DC35-327F-117D18DE417F}</ProjectGuid>
+    <ProjectGuid>{E39D021A-24A3-CC45-6B3B-9304A0479D9A}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Google.XR.ARCoreExtensions.Editor</AssemblyName>
+    <AssemblyName>UnityEditor.XR.LegacyInputHelpers</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -628,9 +628,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Google.XR.ARCoreExtensions.csproj">
-      <Project>{49494986-E3E4-0AA5-892B-5BD33E740A68}</Project>
-      <Name>Google.XR.ARCoreExtensions</Name>
+    <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.csproj">
+      <Project>{8E7C73A3-7719-6FE2-0D0D-A83EDAB504C7}</Project>
+      <Name>UnityEngine.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
+      <Project>{EDE48CFA-E9C6-66CB-F43E-070EAA2E76B0}</Project>
+      <Name>UnityEngine.SpatialTracking</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{01729BEB-38B3-94D0-873E-F22C19EB806A}</Project>
@@ -642,21 +646,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreAnalytics.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreAnalyticsGUI.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreAnalyticsProvider.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreExtensionsProjectSettings.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreExtensionsProjectSettingsGUI.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreExtensionsProjectSettingsProvider.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\Analytics\ArcoreClearcut.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\Analytics\ArcoreSdkLog.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\AssetHelper.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\CloudAnchorPreprocessBuild.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\IOSSupportHelper.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\IOSSupportPreprocessBuild.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\LogRequestUtils.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\SceneUtils.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ShellHelper.cs" />
+    <Compile Include="Packages\com.unity.xr.legacyinputhelpers\Editor\ArmModels\ArmModelEditor.cs" />
+    <Compile Include="Packages\com.unity.xr.legacyinputhelpers\Editor\ArmModels\SwingArmModelEditor.cs" />
+    <Compile Include="Packages\com.unity.xr.legacyinputhelpers\Editor\ArmModels\TransitionArmModelEditor.cs" />
+    <Compile Include="Packages\com.unity.xr.legacyinputhelpers\Editor\CameraOffsetEditor.cs" />
+    <Compile Include="Packages\com.unity.xr.legacyinputhelpers\Editor\MenuUtils.cs" />
+    <Compile Include="Packages\com.unity.xr.legacyinputhelpers\Editor\SeedXRInputBindings\SeedXRInputBindings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\BuildResources\ARCoreiOSDependencies.template" />

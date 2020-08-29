@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{49494986-E3E4-0AA5-892B-5BD33E740A68}</ProjectGuid>
+    <ProjectGuid>{E08C0643-0A13-BF9B-F68E-2FDBBB855F02}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Google.XR.ARCoreExtensions</AssemblyName>
+    <AssemblyName>UnityEngine.TestRunner</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -47,12 +47,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Managed/UnityEngine/UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.2f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -248,20 +242,8 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.122.0">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.122.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.122.0">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/PlayServicesResolver/Editor/Google.JarResolver_v1.2.122.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.122.0">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.122.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Protobuf">
-      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Plugins/ARCore Extensions/package/Editor/Scripts/Internal/Analytics/Google.Protobuf.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>C:/Users/quant/Documents/Actual projects/RF Lazer Tag/AR-Lazer-Tag/Release/AR-Lazer-Tag/AR Lazer Tag/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.2f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -610,48 +592,114 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.XR.ARFoundation.csproj">
-      <Project>{0656CD89-E0E3-4D9F-DB04-49687BAD1C32}</Project>
-      <Name>Unity.XR.ARFoundation</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.ARSubsystems.csproj">
-      <Project>{5C4B56E0-C4A7-2098-2B16-041850FBE6CB}</Project>
-      <Name>Unity.XR.ARSubsystems</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.ARCore.csproj">
-      <Project>{ED5A4B89-D54F-2EB2-5FDB-5EFDFD72CDD2}</Project>
-      <Name>Unity.XR.ARCore</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARAnchorManagerExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCloudAnchor.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCloudReferencePoint.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCoreExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\ARCoreExtensionsConfig.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CameraConfigDepthSensorUsages.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CloudAnchorState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\CloudReferenceState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARAnchorExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARPlaneExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\ARSessionExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ARCoreHandles\XRCameraFrameExtensions.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\ApiConstants.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Helpers\DllImportNoop.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Helpers\Translators.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\IOSSupportManager.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\RuntimeConfig.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiArStatus.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiCloudAnchorMode.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiCloudAnchorState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiPose.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Types\ApiTrackingState.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\AnchorApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\CameraConfigApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\PoseApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\Internal\Wrappers\SessionApi.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\VersionInfo.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Runtime\Scripts\XRCameraConfigurationExtensions.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\AssemblyInfo.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\AllocatingGCMemoryConstraint.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\ConstraintsExtensions.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\InvalidSignatureException.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\Is.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogAssert.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\ILogScope.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\LogEvent.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\LogMatch.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\LogScope\LogScope.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\UnexpectedLogMessageException.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\UnhandledLogMessageException.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Assertions\UnityTestTimeoutException.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\ActionDelegator.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\ConditionalIgnoreAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestMustExpectAllLogsAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityCombinatorialStrategy.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityPlatformAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnitySetUpAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTearDownAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Attributes\UnityTestAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\BaseDelegator.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandBase.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\BeforeAfterTestCommandState.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableApplyChangesToContextCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableRepeatedTestCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableRetryTestCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableSetUpTearDownCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableTestMethodCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\ImmediateEnumerableCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\OuterUnityTestActionCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\SetUpTearDownCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\TestActionCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Commands\TestCommandPcHelper.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\ConstructDelegator.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Filters\AssemblyNameFilter.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Filters\CategoryFilterExtended.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\IAsyncTestAssemblyBuilder.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\IStateSerializer.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\CompositeWorkItem.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\CoroutineTestWorkItem.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\DefaultTestWorkItem.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\FailCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\IEnumerableTestMethodCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\PlaymodeWorkItemFactory.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\RestoreTestContextAfterDomainReload.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\TestCommandBuilder.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityLogCheckDelegatingCommand.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestAssemblyRunner.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityTestExecutionContext.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItem.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityWorkItemDataHolder.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\Runner\WorkItemFactory.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\TestExtensions.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\TestResultExtensions.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\NUnitExtensions\UnityTestAssemblyBuilder.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\PlayModeRunnerCallback.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\PlayerQuitHandler.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\RemoteTestResultSender.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRenderer.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Callbacks\TestResultRendererCallback.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\ITestRunnerListener.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\Messages\IEditModeTestYieldInstruction.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\PlaymodeTestsController.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\PlaymodeTestsControllerSettings.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\IRemoteTestResultDataFactory.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\PlayerConnectionMessageIds.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestData.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultData.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataFactory.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\RemoteHelpers\RemoteTestResultDataWithTestData.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\SynchronousFilter.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\TestEnumeratorWrapper.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\TestListenerWrapper.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\TestPlatform.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\TestRunner\TestRunnerFilter.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyLoadProxy.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\AssemblyWrapper.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyLoadProxy.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\IAssemblyWrapper.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\IScriptingRuntimeProxy.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\ITestAssemblyProvider.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\PlayerTestAssemblyProvider.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AssemblyProvider\ScriptingRuntimeProxy.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\AttributeHelper.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\ColorEqualityComparer.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\CoroutineRunner.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\FloatEqualityComparer.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\IOuterUnityTestAction.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\IPostBuildCleanup.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\IPrebuildSceneSetup.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\ITestRunCallback.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\MonoBehaviourTest\IMonoBehaviourTest.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\MonoBehaviourTest\MonoBehaviourTest.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\PostBuildCleanupAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\PrebuildSceneSetupAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\QuaternionEqualityComparer.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\StacktraceFilter.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\TestRunCallbackAttribute.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\TestRunCallbackListener.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Utils.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector2ComparerWithEqualsOperator.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector2EqualityComparer.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector3ComparerWithEqualsOperator.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector3EqualityComparer.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector4ComparerWithEqualsOperator.cs" />
+    <Compile Include="Packages\com.unity.test-framework\UnityEngine.TestRunner\Utils\Vector4EqualityComparer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\BuildResources\ARCoreiOSDependencies.template" />

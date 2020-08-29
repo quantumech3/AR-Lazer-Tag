@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{54246873-F9D6-DC35-327F-117D18DE417F}</ProjectGuid>
+    <ProjectGuid>{5FCD587C-B023-5664-12C3-B6D9F281A654}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Google.XR.ARCoreExtensions.Editor</AssemblyName>
+    <AssemblyName>com.unity.multiplayer-hlapi.Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -628,9 +628,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Google.XR.ARCoreExtensions.csproj">
-      <Project>{49494986-E3E4-0AA5-892B-5BD33E740A68}</Project>
-      <Name>Google.XR.ARCoreExtensions</Name>
+    <ProjectReference Include="com.unity.multiplayer-hlapi.Runtime.csproj">
+      <Project>{FA5CA632-7858-B348-2678-3563F1DAD317}</Project>
+      <Name>com.unity.multiplayer-hlapi.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.multiplayer-weaver.Editor.csproj">
+      <Project>{93D0DB2F-F53D-5A17-ACE7-5C0226DA2A0D}</Project>
+      <Name>com.unity.multiplayer-weaver.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
       <Project>{01729BEB-38B3-94D0-873E-F22C19EB806A}</Project>
@@ -642,21 +646,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreAnalytics.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreAnalyticsGUI.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreAnalyticsProvider.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreExtensionsProjectSettings.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreExtensionsProjectSettingsGUI.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ARCoreExtensionsProjectSettingsProvider.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\Analytics\ArcoreClearcut.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\Analytics\ArcoreSdkLog.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\AssetHelper.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\CloudAnchorPreprocessBuild.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\IOSSupportHelper.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\IOSSupportPreprocessBuild.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\LogRequestUtils.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\SceneUtils.cs" />
-    <Compile Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\Scripts\Internal\ShellHelper.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkAnimatorEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkBehaviourInspector.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkDiscoveryEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkIdentityEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkInformationPreview.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkLobbyManagerEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkManagerEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkManagerHUDEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkManagerPreview.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkMigrationManagerEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkScenePostProcess.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkTransformChildEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkTransformEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkTransformPreview.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\NetworkTransformVisualizerEditor.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\Properties\AssemblyInfo.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\Tools\MiniJSON.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\Tools\TextUtility.cs" />
+    <Compile Include="Packages\com.unity.multiplayer-hlapi\Editor\WeaverRunner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.google.ar.core.arfoundation.extensions\Editor\BuildResources\ARCoreiOSDependencies.template" />
