@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="kryl.eu" pattern="file[android-commons]:*/||file[android-dialogs]:*/||file[app]:src/main/java/eu/kryl/android/common/ui//*||file[app]:src/main/res/layout/pref_checkbox_preference_item.xml||file[app]:src/main/res/layout/pref_custom_preference_item.xml||file[app]:src/main/res/layout/pref_dlg_edit_text.xml||file[app]:src/main/res/layout/pref_preference_group.xml||file[app]:src/main/res/layout/pref_preference_item.xml" />
+</component>

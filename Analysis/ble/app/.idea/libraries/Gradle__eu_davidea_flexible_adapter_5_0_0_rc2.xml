@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: eu.davidea:flexible-adapter-5.0.0-rc2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/fbf45543a14b69de89f97d57fd2722f96e76cd64/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/fbf45543a14b69de89f97d57fd2722f96e76cd64/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/eu.davidea/flexible-adapter/5.0.0-rc2/695f2a37006b4fb07cadd5be5614ee4e0c0c90dd/flexible-adapter-5.0.0-rc2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

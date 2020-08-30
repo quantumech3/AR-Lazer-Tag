@@ -1,0 +1,8 @@
+<component name="CopyrightManager">
+  <settings default="Argo">
+    <module2copyright>
+      <element module="Argo Decawave mobile" copyright="Argo" />
+      <element module="kryl.eu" copyright="kryl.eu" />
+    </module2copyright>
+  </settings>
+</component>

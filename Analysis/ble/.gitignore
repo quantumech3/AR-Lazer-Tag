@@ -1,0 +1,17 @@
+*.keystore
+*.iml
+.*.swp
+.gradle
+/captures
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/.idea/shelf
+.DS_Store
+/build
+/misc/scripts/crowdin/all*.zip
+android-commons/libs/
+android-commons/src/main/res/drawable/
+app/libs/
+app/src/main/java/com/decawave/argomanager/app/
+app/src/main/java/com/decawave/argomanager/struct/

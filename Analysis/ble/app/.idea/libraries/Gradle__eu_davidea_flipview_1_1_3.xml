@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: eu.davidea:flipview-1.1.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/612b38ad702ad226d9482bc2a2e28daf18e470c0/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/612b38ad702ad226d9482bc2a2e28daf18e470c0/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/eu.davidea/flipview/1.1.3/a8d0aa8eef62383739f5fa97bfbdb5693e6238d0/flipview-1.1.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
