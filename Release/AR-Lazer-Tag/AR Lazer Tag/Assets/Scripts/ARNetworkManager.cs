@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+
 public class ARNetworkManager : NetworkManager
 {
     public GameObject playerInfoPrefab;
