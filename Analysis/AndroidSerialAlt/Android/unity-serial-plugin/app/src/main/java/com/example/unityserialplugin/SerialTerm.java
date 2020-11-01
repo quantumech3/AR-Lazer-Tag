@@ -24,7 +24,7 @@ import com.unity3d.player.UnityPlayer;
 
 public class SerialTerm implements SerialInputOutputManager.Listener {
     private String gameObject;
-
+    private UsbSerialPort port;
     public SerialTerm(Context unityContext, String gameObject, String vendorID, String productID) {
         this.gameObject = gameObject;
         Thread thread = new Thread(() -> {
@@ -81,7 +81,7 @@ public class SerialTerm implements SerialInputOutputManager.Listener {
         UnityPlayer.UnitySendMessage(gameObject, "OnPermissionSuccess", "");
 
         //Open the serial port for the first device (Again, should only be one)
-        UsbSerialPort port = driver.getPorts().get(0);
+        port = driver.getPorts().get(0);
         try {
             port.open(connection);
             //This should be passed in from Unity in the final interface
@@ -110,6 +110,21 @@ public class SerialTerm implements SerialInputOutputManager.Listener {
     @Override
     public void onRunError(Exception e) {
         UnityPlayer.UnitySendMessage(gameObject, "OnRunException", e.toString());
+    }
+
+    public void write(String s) {
+        Thread thread = new Thread(() -> {
+            asyncWrite(s);
+        });
+        thread.start();
+    }
+
+    private void asyncWrite(String s) {
+        try {
+            port.write(s.getBytes(), 10);
+        } catch (IOException e){
+            UnityPlayer.UnitySendMessage(gameObject, "OnWriteException", e.toString());
+        }
     }
 }
 

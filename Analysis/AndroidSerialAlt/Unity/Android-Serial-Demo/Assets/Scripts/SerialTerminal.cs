@@ -89,4 +89,12 @@ public class SerialTerminal : MonoBehaviour
 
         }  
     }
+    void Write(string s)
+    {
+        serialTerminal.Call("write", s);
+    }
+    void OnWriteException(string s)
+    {
+        Debug.Log("Write Exception");
+    }
 }
