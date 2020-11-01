@@ -1,0 +1,3 @@
+include ':classes'
+include ':app'
+rootProject.name = "unity-serial-plugin"

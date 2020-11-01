@@ -1,0 +1,323 @@
+{
+    "m_SelectedDeviceId": "130.245.144.107:9113",
+    "m_SelectedPackage": {
+        "deviceId": "130.245.144.107:9113",
+        "name": "com.DefaultCompany.AndroidSerialDemo",
+        "processId": 6124,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 14766,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 14767,
+            "exited": true
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 18514,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 18513,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 18517,
+            "exited": true
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 19751,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 29526,
+            "exited": true
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 30361,
+            "exited": true
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 29529,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 30365,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 32527,
+            "exited": true
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 32523,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 32524,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 2641,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 27141,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 27142,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 20570,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 20573,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 17480,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 17482,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 17483,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "net.oneplus.launcher",
+            "processId": 4951,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 20569,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 20571,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 20572,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 24854,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 24855,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 24856,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 24857,
+            "exited": true
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 24858,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 28242,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 3614,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 28244,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 3617,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 3615,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 28245,
+            "exited": false
+        },
+        {
+            "deviceId": "192.168.1.33:5555",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 3616,
+            "exited": false
+        },
+        {
+            "deviceId": "130.245.144.107:9113",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 2769,
+            "exited": true
+        },
+        {
+            "deviceId": "130.245.144.107:9113",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 31655,
+            "exited": true
+        },
+        {
+            "deviceId": "130.245.144.107:9113",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 31660,
+            "exited": true
+        },
+        {
+            "deviceId": "130.245.144.107:9113",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 6119,
+            "exited": true
+        },
+        {
+            "deviceId": "130.245.144.107:9113",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 6123,
+            "exited": true
+        },
+        {
+            "deviceId": "130.245.144.107:9113",
+            "name": "com.DefaultCompany.AndroidSerialDemo",
+            "processId": 6124,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "Behavior": 1
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}
