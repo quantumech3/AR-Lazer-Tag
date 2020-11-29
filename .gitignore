@@ -15,3 +15,7 @@ Analysis/SphereAtPlayerLocation/Sphere at Player Location/Library/*
 Analysis/WorldToLocal/World To Local Transform test/Library/*
 Release/AR-Lazer-Tag/AR Lazer Tag/Library/*
 Release/AR-Lazer-Tag/AR Lazer Tag/Temp/*
+*.bin
+*.bin
+*.bin
+*.bin
