@@ -34,8 +34,8 @@ public class DecawaveManager {
     /**
      * Cendor and product ids are the same for every decawave device (possibly?)
      */
-    private static final int vendorId = 1366;
-    private static final int productId = 0105;
+    private static final int vendorId = 4966;
+    private static final int productId = 0261;
 
     /**
      * Singleton principle demands this (no actual constructor fo public use)

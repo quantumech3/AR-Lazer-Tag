@@ -121,7 +121,7 @@ public class SerialTerm implements SerialInputOutputManager.Listener {
 
     private void asyncWrite(String s) {
         try {
-            port.write(s.getBytes(), 10);
+            port.write(s.getBytes(), 1);
         } catch (IOException e){
             UnityPlayer.UnitySendMessage(gameObject, "OnWriteException", e.toString());
         }

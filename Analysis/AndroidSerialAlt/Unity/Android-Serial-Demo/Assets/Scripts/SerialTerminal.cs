@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,6 @@ public class SerialTerminal : MonoBehaviour
         var unityClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         var unityActivity = unityClass.GetStatic<AndroidJavaObject>("currentActivity");
         var unityContext = unityActivity.Call<AndroidJavaObject>("getApplicationContext");
-        
         //Initalize serial terminal
         serialTerminal = new AndroidJavaObject("com.example.unityserialplugin.SerialTerm", new object[] { unityContext, gameObject.transform.name, "1366", "0105" });
 #endif
