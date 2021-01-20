@@ -36,6 +36,8 @@ public class PlayerBehavior : NetworkBehaviour
     private ARRaycastManager raycastManager;
     private ARAnchorManager anchorManager;
 
+    private CSVLogger csvLogger;
+
     [Command]
     public void CmdSetHeight(double height)
     {
@@ -139,6 +141,15 @@ public class PlayerBehavior : NetworkBehaviour
                     GuiTransitionHandler transitionHandler = gui.GetComponent<GuiTransitionHandler>();
                     transitionHandler.player = this.gameObject;
                 }
+
+                // Instantiate CSV Logger
+                csvLogger = new CSVLogger(new string[] {"Timestamp", 
+                    "Origin Position X", "Origin Position Y", "Origin Position Z",
+                    "Origin Rotation X", "Origin Rotation Y", "Origin Rotation Z",
+                    "Camera Absolute Position X", "Camera Absolute Position Y", "Camera Absolute Position Z",
+                    "Camera Absolute Rotation X", "Camera Absolute Rotation Y", "Camera Absolute Rotation Z",
+                    "Camera Relative Position X", "Camera Relative Position Y", "Camera Relative Position Z",
+                    "Camera Relative Rotation X", "Camera Relative Rotation Y", "Camera Relative Rotation Z",}, "log.csv");
             }
         }
     }
@@ -194,7 +205,7 @@ public class PlayerBehavior : NetworkBehaviour
 
     public void WaitingUpdate()
     {
-        if(isClient)
+        if(isLocalPlayer && isClient)
         {
             if(this.origin != null)
             {
@@ -249,7 +260,7 @@ public class PlayerBehavior : NetworkBehaviour
                     CmdSetPlayerState(GameState.Dead);
                     return;
                 }
-
+                
                 // CmdSetPosition(local position of "this" relative to this.origin)
                 CmdSetPosition(this.origin.transform.InverseTransformPoint(this.camera.transform.position));
 
@@ -262,6 +273,16 @@ public class PlayerBehavior : NetworkBehaviour
 
                     CmdSpawnLazerAt(lazerOriginTransform.position, lazerOriginTransform.rotation);
                 }
+
+                //Log positional and rotational data to CSV
+                Pose relativePose = origin.transform.InverseTransformPose(new Pose(this.camera.transform.position, this.camera.transform.rotation));
+                csvLogger.Write(new string[] { System.DateTime.Now.ToString(), 
+                    this.origin.transform.position.x.ToString(), this.origin.transform.position.y.ToString(), this.origin.transform.position.z.ToString(),
+                    this.origin.transform.rotation.eulerAngles.x.ToString(), this.origin.transform.rotation.eulerAngles.y.ToString(), this.origin.transform.rotation.eulerAngles.z.ToString(),
+                    this.camera.transform.position.x.ToString(), this.camera.transform.position.y.ToString(), this.camera.transform.position.z.ToString(),
+                    this.camera.transform.rotation.eulerAngles.x.ToString(), this.camera.transform.rotation.eulerAngles.y.ToString(), this.camera.transform.rotation.eulerAngles.z.ToString(),
+                    relativePose.position.x.ToString(), relativePose.position.y.ToString(), relativePose.position.z.ToString(),
+                    relativePose.rotation.eulerAngles.x.ToString(), relativePose.rotation.eulerAngles.y.ToString(), relativePose.rotation.eulerAngles.z.ToString()});
             }
 
             // Set this.playerHitbox to an instance of playerHitboxPrefab instantiated at "position" relative to "origin"
