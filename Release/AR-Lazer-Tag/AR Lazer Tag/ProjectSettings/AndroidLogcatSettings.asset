@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "df261389",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "df261389",
+        "name": "com.ScottBurgert.ARLazerTag",
+        "processId": 25405,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,12 @@
             "deviceId": "df261389",
             "name": "com.google.android.apps.docs.editors.sheets",
             "processId": 21250,
+            "exited": false
+        },
+        {
+            "deviceId": "df261389",
+            "name": "com.ScottBurgert.ARLazerTag",
+            "processId": 25405,
             "exited": false
         }
     ],
