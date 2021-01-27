@@ -74,6 +74,16 @@ public class PlayerBehavior : NetworkBehaviour
         GameObject lazer = Instantiate(lazerPrefab, position, rotation);
         NetworkServer.Spawn(lazer);
     }
+    [Command]
+    public void CmdLogError(string error)
+    {
+        Debug.LogError(error);
+    }
+    [Command]
+    public void CmdStopServer()
+    {
+        networkManager.StopServer();
+    }
 
     private void InstantiateARObjects()
     {
@@ -220,10 +230,14 @@ public class PlayerBehavior : NetworkBehaviour
                 else if(originBehavior.cloudAnchor.cloudAnchorState != CloudAnchorState.TaskInProgress)
                 {
                     Debug.LogError("Had trouble hosting cloud anchor: " + originBehavior.cloudAnchor.cloudAnchorState);
-                    Debug.LogError("Trying again..");
+                    Debug.LogError("Closing server...");
+
+                    CmdLogError("GameState hung, closing server, cloud anchor could not be resolved: " + originBehavior.cloudAnchor.cloudAnchorState + " @ Client: " + GetComponent<NetworkIdentity>().netId.Value);
 
                     Destroy(this.origin);
                     this.origin = null;
+
+                    CmdStopServer();
                 }
             }
             else if(serverInfo.originId != string.Empty)
