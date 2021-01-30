@@ -13,22 +13,22 @@ public class LazerBehavior : NetworkBehaviour
 
     private void Start()
     {
-        if (isClient && GameObject.Find("Origin(Clone)") != null)
+        /* if (isClient && GameObject.Find("Origin(Clone)") != null)
         {
             this.origin = GameObject.Find("Origin(Clone)");
             this.transform.SetParent(origin.transform, false);
             transformIsLocalized = true;
-        }
+        } */ //PATCH: Made lazer position independant of VIO
     }
 
     private void Update()
     {
-        if (isClient && !transformIsLocalized && GameObject.Find("Origin(Clone)") != null)
+        /* if (isClient && !transformIsLocalized && GameObject.Find("Origin(Clone)") != null)
         {
             this.origin = GameObject.Find("Origin(Clone)");
             this.transform.SetParent(origin.transform, false);
             transformIsLocalized = true;
-        }
+        } */
     }
 
     private void FixedUpdate()
@@ -36,8 +36,6 @@ public class LazerBehavior : NetworkBehaviour
         if(isServer)
         {
             // Spawn a new lazer with its position shifted then delete this lazer.
-            // I am doing this as a part of a work-around to localize position relative to origin
-
             // If this lazer is not over the despawn radius then move
             if (this.transform.position.magnitude < despawnRadius)
             {

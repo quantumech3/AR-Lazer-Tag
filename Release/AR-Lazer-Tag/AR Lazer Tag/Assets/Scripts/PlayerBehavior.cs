@@ -85,6 +85,7 @@ public class PlayerBehavior : NetworkBehaviour
 
         // Set references
         this.camera = GameObject.Find("AR Camera");
+        this.camera.GetComponent<SetToPlayerPosition>().player = this.gameObject; // PATCH: AR camera now sets itself to players position. Therefore it needs a handle to the player game object
         this.raycastManager = sessionOrigin.GetComponent<ARRaycastManager>();
         this.anchorManager = sessionOrigin.GetComponent<ARAnchorManager>();
 
@@ -160,6 +161,8 @@ public class PlayerBehavior : NetworkBehaviour
                 DeadUpdate();
                 break;
         }
+
+        // TODO: Make this set camera position to the position of the player in fusion space
     }
 
     public void PregameUpdate()
@@ -255,18 +258,14 @@ public class PlayerBehavior : NetworkBehaviour
 
                 if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
                 {
-                    Transform lazerTransform = this.camera.transform;
+                    Transform lazerTransform = this.camera.transform; // PATCH: Made init lazer position independant of VIO
 
-                    // Lazer pose in origin space
-                    Pose lazerOriginTransform = origin.transform.InverseTransformPose(new Pose(lazerTransform.position + lazerTransform.forward * 0.65f, lazerTransform.rotation));
-
-                    CmdSpawnLazerAt(lazerOriginTransform.position, lazerOriginTransform.rotation);
+                    CmdSpawnLazerAt(lazerTransform.position, lazerTransform.rotation);
                 }
             }
 
-            // Set this.playerHitbox to an instance of playerHitboxPrefab instantiated at "position" relative to "origin"
-            this.playerHitbox = Instantiate(playerHitboxPrefab, this.position, Quaternion.identity);
-            this.playerHitbox.transform.SetParent(this.origin.transform, false);
+            // Set this.playerHitbox to an instance of playerHitboxPrefab instantiated at the position of the player
+            this.playerHitbox = Instantiate(playerHitboxPrefab, this.transform.position, Quaternion.identity); // PATCH: Made PlayerBehavior independant of VIO
 
             // Scale this.playerHitbox's Y dimension by this.height/39.3701
             this.playerHitbox.transform.localScale = new Vector3(0.45f, (float)this.height / 39.3701f, 0.45f);
