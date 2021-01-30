@@ -13,22 +13,10 @@ public class LazerBehavior : NetworkBehaviour
 
     private void Start()
     {
-        /* if (isClient && GameObject.Find("Origin(Clone)") != null)
-        {
-            this.origin = GameObject.Find("Origin(Clone)");
-            this.transform.SetParent(origin.transform, false);
-            transformIsLocalized = true;
-        } */ //PATCH: Made lazer position independant of VIO
     }
 
     private void Update()
     {
-        /* if (isClient && !transformIsLocalized && GameObject.Find("Origin(Clone)") != null)
-        {
-            this.origin = GameObject.Find("Origin(Clone)");
-            this.transform.SetParent(origin.transform, false);
-            transformIsLocalized = true;
-        } */
     }
 
     private void FixedUpdate()

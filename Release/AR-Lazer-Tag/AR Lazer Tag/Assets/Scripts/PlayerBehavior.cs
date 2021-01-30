@@ -172,26 +172,6 @@ public class PlayerBehavior : NetworkBehaviour
     {
         if(isLocalPlayer && isClient)
         {
-            // If the user taps the screen
-            //if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-            //{
-            //    List<ARRaycastHit> hitpoints = new List<ARRaycastHit>();
-            //    raycastManager.Raycast(new Vector2(Screen.width / 2f, Screen.height / 2f), hitpoints);
-
-            //    if(hitpoints.Count > 0)
-            //    {
-            //        CmdSetServerState(GameState.Waiting);
-
-            //        // this.origin = an instantiated "originPrefab" game object located at the transform of hitpoints[0]
-            //        this.origin = Instantiate(originPrefab, hitpoints[0].pose.position, hitpoints[0].pose.rotation);
-
-            //        // ARCloudAnchor anchor = A cloud anchor instantiated at the transform of hitpoints[0]
-            //        //ARCloudAnchor anchor = anchorManager.HostCloudAnchor(anchorManager.AddAnchor(hitpoints[0].pose)); PATCH
-
-            //        // Set the "cloudAnchor" attribute of the "OriginBehavior" component of "origin" to "anchor"
-            //        //this.origin.GetComponent<OriginBehavior>().cloudAnchor = anchor; PATCH
-            //    }
-            //}
             CmdSetServerState(GameState.Waiting);
             CmdSetPlayerState(GameState.Waiting);            
         }
@@ -201,40 +181,6 @@ public class PlayerBehavior : NetworkBehaviour
     {
         if (isClient)
         {
-            /*if(this.origin != null)
-            {
-                // PATCH: Activate VIO fusion
-                ARPlayerPoseTracker.vioOrigin = this.origin;
-
-                OriginBehavior originBehavior = this.origin.GetComponent<OriginBehavior>();
-
-                if(originBehavior.cloudAnchor.cloudAnchorState == CloudAnchorState.Success)
-                {
-                    CmdSetOriginId(originBehavior.cloudAnchor.cloudAnchorId);
-                    CmdSetServerState(GameState.Alive);
-                    CmdSetPlayerState(GameState.Alive);
-                }
-                else if(originBehavior.cloudAnchor.cloudAnchorState != CloudAnchorState.TaskInProgress)
-                {
-                    Debug.LogError("Had trouble hosting cloud anchor: " + originBehavior.cloudAnchor.cloudAnchorState);
-                    Debug.LogError("Trying again..");
-
-                    Destroy(this.origin);
-                    this.origin = null;
-                }
-            }
-            else if(serverInfo.originId != string.Empty)
-            {
-                if(this.origin == null)
-                {
-                    this.origin = Instantiate(originPrefab);
-                    OriginBehavior originBehavior = this.origin.GetComponent<OriginBehavior>();
-
-                    originBehavior.cloudAnchor = anchorManager.ResolveCloudAnchorId(serverInfo.originId);
-                }
-            }
-        } */
-
             CmdSetServerState(GameState.Alive);
             CmdSetPlayerState(GameState.Alive);
         }
@@ -261,10 +207,6 @@ public class PlayerBehavior : NetworkBehaviour
                     CmdSetPlayerState(GameState.Dead);
                     return;
                 }
-
-                // CmdSetPosition(local position of "this" relative to this.origin)
-                //CmdSetPosition(this.origin.transform.InverseTransformPoint(this.camera.transform.position));
-
                 if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
                 {
                     Transform lazerTransform = this.camera.transform; // PATCH: Made init lazer position independant of VIO
