@@ -201,6 +201,9 @@ public class PlayerBehavior : NetworkBehaviour
         {
             if(this.origin != null)
             {
+                // PATCH: Activate VIO fusion
+                ARPlayerPoseTracker.vioOrigin = this.origin;
+
                 OriginBehavior originBehavior = this.origin.GetComponent<OriginBehavior>();
 
                 if(originBehavior.cloudAnchor.cloudAnchorState == CloudAnchorState.Success)
@@ -260,7 +263,7 @@ public class PlayerBehavior : NetworkBehaviour
                 {
                     Transform lazerTransform = this.camera.transform; // PATCH: Made init lazer position independant of VIO
 
-                    CmdSpawnLazerAt(lazerTransform.position, lazerTransform.rotation);
+                    CmdSpawnLazerAt(lazerTransform.position + lazerTransform.forward * 0.5f, lazerTransform.rotation);
                 }
             }
 

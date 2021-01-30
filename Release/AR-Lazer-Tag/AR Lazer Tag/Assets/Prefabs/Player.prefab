@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 357462986593866008}
   - component: {fileID: 357462986593866009}
   - component: {fileID: 357462986593866010}
+  - component: {fileID: 4666549902517173826}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -102,3 +103,25 @@ MonoBehaviour:
     type: 3}
   networkManager: {fileID: 0}
   serverInfo: {fileID: 0}
+--- !u!114 &4666549902517173826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357462986593866011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3df7e9d96e0943468c7a9a12561bd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rfOriginName: RF Origin
+  rfOrigin: {fileID: 0}
+  rfGhostPrefab: {fileID: 7966120052895038931, guid: d0ca561897ace2a45ba9867bf22fa720,
+    type: 3}
+  vioGhostPrefab: {fileID: 1616796391768513973, guid: ffa76990835a74a4f9d7c007c4d533bd,
+    type: 3}
+  rfPosition: {x: 0, y: 0, z: 0}
+  vioPosition: {x: 0, y: 0, z: 0}
+  rfGhost: {fileID: 0}
+  vioGhost: {fileID: 0}

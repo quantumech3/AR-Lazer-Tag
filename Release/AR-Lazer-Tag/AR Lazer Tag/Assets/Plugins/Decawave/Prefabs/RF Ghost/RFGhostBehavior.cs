@@ -27,7 +27,7 @@ public class RFGhostBehavior : MonoBehaviour
     {
         Transform thisTransform = (new GameObject()).transform;
         thisTransform.position = transform.position;
-        thisTransform.rotation = thisTransform.rotation * rfOrigin.transform.rotation; // Quaternion.Euler(rfOrigin.transform.rotation.eulerAngles.x + this.transform.rotation.eulerAngles.x, initRotation.y + transform.rotation.eulerAngles.y, initRotation.z + transform.rotation.eulerAngles.z);
+        thisTransform.rotation = transform.rotation * rfOrigin.transform.rotation; // Quaternion.Euler(rfOrigin.transform.rotation.eulerAngles.x + this.transform.rotation.eulerAngles.x, initRotation.y + transform.rotation.eulerAngles.y, initRotation.z + transform.rotation.eulerAngles.z);
 
         return thisTransform;
     }
