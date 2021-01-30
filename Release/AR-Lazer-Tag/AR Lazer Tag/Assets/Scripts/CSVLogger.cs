@@ -11,9 +11,9 @@ public class CSVLogger
     int columns;
 
     // Writes the header of the CSV file using a string array as the header
-    public CSVLogger(string[] headerArray, string localPath)
+    public CSVLogger(string[] headerArray, string path)
     {
-        filePath = Application.persistentDataPath + "/" + localPath;
+        filePath = path;
         columns = headerArray.Length;
         var header = String.Join(",", headerArray) + Environment.NewLine;
         File.WriteAllText(filePath, header);

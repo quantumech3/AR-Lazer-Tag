@@ -35,7 +35,6 @@ public class PlayerBehavior : NetworkBehaviour
     private GameObject camera;
     private ARRaycastManager raycastManager;
     private ARAnchorManager anchorManager;
-
     private CSVLogger csvLogger;
 
     [Command]
@@ -73,6 +72,25 @@ public class PlayerBehavior : NetworkBehaviour
     {
         GameObject lazer = Instantiate(lazerPrefab, position, rotation);
         NetworkServer.Spawn(lazer);
+    }
+    [Command]
+    public void CmdLogData(NetworkInstanceId networkInstanceId, float timeStamp, Vector3 vioPosition, Vector3 vioRotation, Vector3 accelerometer, Vector3 gyroscope, Vector3 magnetometer)
+    {
+        if(csvLogger == null)
+        {
+            csvLogger = new CSVLogger(new string[]{"Client ID", "Timestamp",
+                                       "VIO Position X", "VIO Position Y", "VIO Position Z",
+                                       "VIO Rotation X", "VIO Rotation Y", "VIO Rotation Z",
+                                       "Accelerometer X", "Accelerometer Y", "Accelerometer Z",
+                                       "Gyroscope X", "Gyroscope Y", "Gyroscope Z", 
+                                       "Magnetometer X", "Magnetometer Y", "Magnetometer Z"}, "C:/temp/arLog.csv");
+        }
+        csvLogger.Write(new string[] {networkInstanceId.Value.ToString(), timeStamp.ToString(),
+                                      vioPosition.x.ToString(), vioPosition.y.ToString(), vioPosition.z.ToString(),
+                                      vioRotation.x.ToString(), vioRotation.y.ToString(), vioRotation.z.ToString(),
+                                      accelerometer.x.ToString(), accelerometer.y.ToString(), accelerometer.z.ToString(),
+                                      gyroscope.x.ToString(), gyroscope.y.ToString(), gyroscope.z.ToString(),
+                                      magnetometer.x.ToString(), magnetometer.y.ToString(), magnetometer.z.ToString()});
     }
     [Command]
     public void CmdLogError(string error)
@@ -152,14 +170,9 @@ public class PlayerBehavior : NetworkBehaviour
                     transitionHandler.player = this.gameObject;
                 }
 
-                // Instantiate CSV Logger
-                csvLogger = new CSVLogger(new string[] {"Timestamp", 
-                    "Origin Position X", "Origin Position Y", "Origin Position Z",
-                    "Origin Rotation X", "Origin Rotation Y", "Origin Rotation Z",
-                    "Camera Absolute Position X", "Camera Absolute Position Y", "Camera Absolute Position Z",
-                    "Camera Absolute Rotation X", "Camera Absolute Rotation Y", "Camera Absolute Rotation Z",
-                    "Camera Relative Position X", "Camera Relative Position Y", "Camera Relative Position Z",
-                    "Camera Relative Rotation X", "Camera Relative Rotation Y", "Camera Relative Rotation Z",}, "log.csv");
+                // Enable gyroscope and compass
+                Input.gyro.enabled = true;
+                Input.compass.enabled = true;
             }
         }
     }
@@ -290,13 +303,7 @@ public class PlayerBehavior : NetworkBehaviour
 
                 //Log positional and rotational data to CSV
                 Pose relativePose = origin.transform.InverseTransformPose(new Pose(this.camera.transform.position, this.camera.transform.rotation));
-                csvLogger.Write(new string[] { System.DateTime.Now.ToString(), 
-                    this.origin.transform.position.x.ToString(), this.origin.transform.position.y.ToString(), this.origin.transform.position.z.ToString(),
-                    this.origin.transform.rotation.eulerAngles.x.ToString(), this.origin.transform.rotation.eulerAngles.y.ToString(), this.origin.transform.rotation.eulerAngles.z.ToString(),
-                    this.camera.transform.position.x.ToString(), this.camera.transform.position.y.ToString(), this.camera.transform.position.z.ToString(),
-                    this.camera.transform.rotation.eulerAngles.x.ToString(), this.camera.transform.rotation.eulerAngles.y.ToString(), this.camera.transform.rotation.eulerAngles.z.ToString(),
-                    relativePose.position.x.ToString(), relativePose.position.y.ToString(), relativePose.position.z.ToString(),
-                    relativePose.rotation.eulerAngles.x.ToString(), relativePose.rotation.eulerAngles.y.ToString(), relativePose.rotation.eulerAngles.z.ToString()});
+                CmdLogData(GetComponent<NetworkIdentity>().netId, Time.time, relativePose.position, relativePose.rotation.eulerAngles, Input.acceleration, Input.gyro.attitude.eulerAngles, Input.compass.rawVector);
             }
 
             // Set this.playerHitbox to an instance of playerHitboxPrefab instantiated at "position" relative to "origin"
