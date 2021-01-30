@@ -95,6 +95,9 @@ public class PlayerBehavior : NetworkBehaviour
         arCoreExtensions.Session = session.GetComponent<ARSession>();
         arCoreExtensions.SessionOrigin = sessionOrigin.GetComponent<ARSessionOrigin>();
         arCoreExtensions.CameraManager = this.camera.GetComponent<ARCameraManager>();
+
+        // Set VIO Origin to RF origin in ARPlayerPoseTracker (The origin isnt actually used)
+        ARPlayerPoseTracker.vioOrigin = GameObject.Find("RF Origin");
     }
 
     void Start()
@@ -170,36 +173,35 @@ public class PlayerBehavior : NetworkBehaviour
         if(isLocalPlayer && isClient)
         {
             // If the user taps the screen
-            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
-            {
-                List<ARRaycastHit> hitpoints = new List<ARRaycastHit>();
-                raycastManager.Raycast(new Vector2(Screen.width / 2f, Screen.height / 2f), hitpoints);
+            //if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+            //{
+            //    List<ARRaycastHit> hitpoints = new List<ARRaycastHit>();
+            //    raycastManager.Raycast(new Vector2(Screen.width / 2f, Screen.height / 2f), hitpoints);
 
-                if(hitpoints.Count > 0)
-                {
-                    CmdSetServerState(GameState.Waiting);
+            //    if(hitpoints.Count > 0)
+            //    {
+            //        CmdSetServerState(GameState.Waiting);
 
-                    // this.origin = an instantiated "originPrefab" game object located at the transform of hitpoints[0]
-                    this.origin = Instantiate(originPrefab, hitpoints[0].pose.position, hitpoints[0].pose.rotation);
+            //        // this.origin = an instantiated "originPrefab" game object located at the transform of hitpoints[0]
+            //        this.origin = Instantiate(originPrefab, hitpoints[0].pose.position, hitpoints[0].pose.rotation);
 
-                    // ARCloudAnchor anchor = A cloud anchor instantiated at the transform of hitpoints[0]
-                    ARCloudAnchor anchor = anchorManager.HostCloudAnchor(anchorManager.AddAnchor(hitpoints[0].pose));
+            //        // ARCloudAnchor anchor = A cloud anchor instantiated at the transform of hitpoints[0]
+            //        //ARCloudAnchor anchor = anchorManager.HostCloudAnchor(anchorManager.AddAnchor(hitpoints[0].pose)); PATCH
 
-                    // Set the "cloudAnchor" attribute of the "OriginBehavior" component of "origin" to "anchor"
-                    this.origin.GetComponent<OriginBehavior>().cloudAnchor = anchor;
-                }
-            }
-
-            if (serverInfo.state != GameState.Pregame)
-                CmdSetPlayerState(GameState.Waiting);
+            //        // Set the "cloudAnchor" attribute of the "OriginBehavior" component of "origin" to "anchor"
+            //        //this.origin.GetComponent<OriginBehavior>().cloudAnchor = anchor; PATCH
+            //    }
+            //}
+            CmdSetServerState(GameState.Waiting);
+            CmdSetPlayerState(GameState.Waiting);            
         }
     }
 
     public void WaitingUpdate()
     {
-        if(isClient)
+        if (isClient)
         {
-            if(this.origin != null)
+            /*if(this.origin != null)
             {
                 // PATCH: Activate VIO fusion
                 ARPlayerPoseTracker.vioOrigin = this.origin;
@@ -231,6 +233,10 @@ public class PlayerBehavior : NetworkBehaviour
                     originBehavior.cloudAnchor = anchorManager.ResolveCloudAnchorId(serverInfo.originId);
                 }
             }
+        } */
+
+            CmdSetServerState(GameState.Alive);
+            CmdSetPlayerState(GameState.Alive);
         }
     }
 
@@ -257,7 +263,7 @@ public class PlayerBehavior : NetworkBehaviour
                 }
 
                 // CmdSetPosition(local position of "this" relative to this.origin)
-                CmdSetPosition(this.origin.transform.InverseTransformPoint(this.camera.transform.position));
+                //CmdSetPosition(this.origin.transform.InverseTransformPoint(this.camera.transform.position));
 
                 if(Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
                 {
