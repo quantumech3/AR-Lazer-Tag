@@ -35,6 +35,7 @@ public class PlayerBehavior : NetworkBehaviour
     private GameObject camera;
     private ARRaycastManager raycastManager;
     private ARAnchorManager anchorManager;
+    private CSVLogger csvLogger;
 
     [Command]
     public void CmdSetHeight(double height)
@@ -73,6 +74,29 @@ public class PlayerBehavior : NetworkBehaviour
         NetworkServer.Spawn(lazer);
     }
 
+    [Command]
+    public void CmdLogData(NetworkInstanceId networkInstanceId, float timeStamp, Vector3 vioPosition, Vector3 rfPosition, Vector3 fusionPosition, Vector3 vioRotation, Vector3 accelerometer, Vector3 gyroscope, Vector3 magnetometer)
+    {
+        if (csvLogger == null)
+        {
+            csvLogger = new CSVLogger(new string[]{"Client ID", "Timestamp",
+                                       "VIO Position X", "VIO Position Y", "VIO Position Z",
+                                       "RF Position X", "RF Position Y", "RF Position Z",
+                                       "Fusion Position X", "Fusion Position Y", "Fusion Position Z",
+                                       "VIO Rotation X", "VIO Rotation Y", "VIO Rotation Z",
+                                       "Accelerometer X", "Accelerometer Y", "Accelerometer Z",
+                                       "Gyroscope X", "Gyroscope Y", "Gyroscope Z",
+                                       "Magnetometer X", "Magnetometer Y", "Magnetometer Z"}, "C:/temp/arLog.csv");
+        }
+        csvLogger.Write(new string[] {networkInstanceId.Value.ToString(), timeStamp.ToString(),
+                                      vioPosition.x.ToString(), vioPosition.y.ToString(), vioPosition.z.ToString(),
+                                      rfPosition.x.ToString(), rfPosition.y.ToString(), rfPosition.z.ToString(),
+                                      fusionPosition.x.ToString(), fusionPosition.y.ToString(), fusionPosition.z.ToString(),
+                                      vioRotation.x.ToString(), vioRotation.y.ToString(), vioRotation.z.ToString(),
+                                      accelerometer.x.ToString(), accelerometer.y.ToString(), accelerometer.z.ToString(),
+                                      gyroscope.x.ToString(), gyroscope.y.ToString(), gyroscope.z.ToString(),
+                                      magnetometer.x.ToString(), magnetometer.y.ToString(), magnetometer.z.ToString()});
+    }
     private void InstantiateARObjects()
     {
         // Instantiate ARSession object
@@ -143,6 +167,10 @@ public class PlayerBehavior : NetworkBehaviour
                     GuiTransitionHandler transitionHandler = gui.GetComponent<GuiTransitionHandler>();
                     transitionHandler.player = this.gameObject;
                 }
+
+                // Enable gyroscope and compass
+                Input.gyro.enabled = true;
+                Input.compass.enabled = true;
             }
         }
     }
@@ -213,6 +241,8 @@ public class PlayerBehavior : NetworkBehaviour
 
                     CmdSpawnLazerAt(lazerTransform.position + lazerTransform.forward * 0.5f, lazerTransform.rotation);
                 }
+
+                CmdLogData(GetComponent<NetworkIdentity>().netId, Time.time, this.GetComponent<ARPlayerPoseTracker>().vioPosition, this.GetComponent<ARPlayerPoseTracker>().rfPosition, this.camera.transform.position, this.camera.transform.rotation.eulerAngles, Input.acceleration, Input.gyro.attitude.eulerAngles, Input.compass.rawVector);
             }
 
             // Set this.playerHitbox to an instance of playerHitboxPrefab instantiated at the position of the player
